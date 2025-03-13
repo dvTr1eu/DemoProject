@@ -1,0 +1,138 @@
+﻿@using MVC.Helpers
+@using Core.DTOs
+@model Core.DTOs.MovieBookingDto
+@{
+    Layout = "_Layout";
+}
+
+<!-- ==========Banner-Section========== -->
+<section class="" style="padding-top: 170px; padding-bottom: 20px">
+    <div class="container">
+        <h4 style="padding-bottom: 10px;border-bottom: 1px white solid">Nội Dung Phim</h4>
+        <div class="details-banner-wrapper pt-5">
+            <div class="details-banner-thumb">
+                <img src="@Model.MovieDetail.Poster" alt="movie">
+                <a href="@Model.MovieDetail.TrailerUrl" class="video-popup">
+                    <img src="~/movieassets/images/movie/video-button.png" alt="movie">
+                </a>
+            </div>
+            <div class="details-banner-content offset-lg-3">
+                <h3 class="title">@Model.MovieDetail.Title</h3>
+                <div class="social-and-duration">
+                    <div class="duration-area d-flex flex-column">
+                        <div class="item">
+                            <i class="fas fa-film"></i><span>Đạo diễn: @Model.MovieDetail.Director</span>
+                        </div>
+                        <div class="item">
+                            <i class="fas fa-users"></i><span>Diễn viên: @Model.MovieDetail.Actors</span>
+                        </div>
+                        <div class="item">
+                            <i class="fas fa-clone"></i>
+                            <span>Thể loại:
+                                @if (Model.MovieDetail.GenreNames != null && Model.MovieDetail.GenreNames.Any())
+                                {
+                                    @string.Join(" , ", Model.MovieDetail.GenreNames)
+                                }
+                                else
+                                {
+                                    <span>N/A</span>
+                                }
+                            </span>
+                        </div>
+                        <div class="item">
+                            <i class="fas fa-calendar-alt"></i><span>Khởi chiếu: @Utilities.FormatDate(Model.MovieDetail.ScreeningDay)</span>
+                        </div>
+                        <div class="item">
+                            <i class="far fa-clock"></i><span>Thời lượng: @Model.MovieDetail.DurationMinutes phút</span>
+                        </div>
+                        <div class="item">
+                            <i class="fas fa-language"></i><span>Ngôn ngữ: @Model.MovieDetail.Language</span>
+                        </div>
+                        <div class="item">
+                            <i class="fas fa-ban"></i><span>Rated: @Model.MovieDetail.LimitAge</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- ==========Banner-Section========== -->
+<!-- ==========Book-Section========== -->
+<section class="">
+    <div class="container">
+        <div class="book-wrapper offset-lg-3">
+            @if(Model.MovieDetail.Status){
+            <a class="custom-button pe-auto" data-toggle="modal" data-target="#showBooking" data-movie-id="@Model.MovieDetail.Id">Đặt vé</a>
+            }
+            else{
+            <a class="custom-button pe-auto">Xin lỗi phim chưa có suất chiếu</a>
+            }
+        </div>
+    </div>
+</section>
+<!-- ==========Book-Section========== -->
+
+<!--Modal Show-->
+<div class="modal fade" id="showBooking" tabindex="-1" role="dialog" aria-labelledby="showBookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                @await Html.PartialAsync("_ModalBookShowPartial", Model)
+            </div>
+        </div>
+    </div>
+</div>
+<section style="margin: auto; width: 70%; padding: 24px">
+    <div>
+        <p>@Model.MovieDetail.Description</p>
+    </div>
+</section>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function() {
+            $("#dateSelect").on('change',
+                function() {
+                    var date = $(this).val();
+                    var movieId = @Model.MovieDetail.Id;
+
+                    $.ajax({
+                        url: '@Url.Action("GetShowtimesByDate", "Movie")',
+                        type: 'GET',
+                        data: { day: date, movieId: movieId },
+                        success: function(data) {
+                            var cinemaList = $("#cinemaList");
+                            cinemaList.empty();
+                            console.log(data);
+                            if (data.length === 0) {
+                                cinemaList.append('<p class="text-danger">Không có suất chiếu nào cho ngày này.</p>');
+                                return;
+                            }
+
+                            data.forEach(cinema => {
+                                var cinemaHtml = `
+                        <div class="cinema-item">
+                            <h6 class="text-dark">${cinema.cinemaName}</h6>
+                            <ul class="d-flex flex-row showtime-list">`;
+
+                                cinema.showTimes.forEach(show => {
+                                    cinemaHtml += `
+                            <li class="border border-dark p-2 m-2">
+                                                        <a href="/Booking/CreateBook?showId=${show.showId}&showTime=${show.time}">
+                                            <span class="text-dark">${show.time}</span>
+                                </a>
+                            </li>`;
+                                });
+
+                                cinemaHtml += `</ul></div>`;
+                                cinemaList.append(cinemaHtml);
+                            });
+                        }
+                    });
+                });
+        });
+    </script>
+}

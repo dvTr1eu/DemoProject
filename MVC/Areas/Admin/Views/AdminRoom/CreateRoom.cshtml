@@ -1,0 +1,487 @@
+﻿@using Core.DTOs
+@using System.Collections
+@model Core.DTOs.RoomDto
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <!-- Cột trái: Screen -->
+        <div class="col-md-9 d-flex flex-column align-items-center">
+            <div class="screen-area text-center">
+                <div class="screen-thumb">
+                    <img src="~/movieassets/images/movie/screen-thumb.png" alt="movie" class="img-fluid">
+                </div>
+                <h4 class="screen">Screen</h4>
+                <div class="screen-wrapper">
+                    <ul class="seat-area">
+                        <li class="seat-line">
+                            <span>A</span>
+                            <ul class="seat--area">
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="seat-line">
+                            <span>B</span>
+                            <ul class="seat--area">
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="seat-line">
+                            <span>C</span>
+                            <ul class="seat--area">
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    <li class="seat-line">
+                        <span>D</span>
+                        <ul class="seat--area">
+                            <li class="front-seat">
+                                <ul>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="front-seat">
+                                <ul>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="front-seat">
+                                <ul>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="seat-line">
+                        <span>E</span>
+                        <ul class="seat--area">
+                            <li class="front-seat">
+                                <ul>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="front-seat">
+                                <ul>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="front-seat">
+                                <ul>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="seat-line">
+                        <span>F</span>
+                        <ul class="seat--area">
+                            <li class="front-seat">
+                                <ul>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="front-seat">
+                                <ul>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="front-seat">
+                                <ul>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="seat-line">
+                        <span>G</span>
+                        <ul class="seat--area">
+                            <li class="front-seat">
+                                <ul>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="front-seat">
+                                <ul>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="front-seat">
+                                <ul>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                    <li class="single-seat">
+                                        <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                        <li class="seat-line">
+                            <span>H</span>
+                            <ul class="seat--area">
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                        <li class="single-seat">
+                                            <img src="~/movieassets/images/movie/seat01.png" alt="seat">
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cột phải: Form -->
+        <div class="col-md-3">
+            <div class="card shadow p-4">
+                <h4 class="text-center mb-4">Tạo Phòng Chiếu</h4>
+                @using (Html.BeginForm("CreateRoom", "AdminRoom", null, FormMethod.Post, false, new { }))
+                {
+                    <div class="mb-3">
+                        <label class="form-label">Chọn chi nhánh:</label>
+                        <select asp-for="CinemaId" class="form-select" id="cinemaSelect">
+                            <option class="ps-4" value="" disabled selected>Chọn 1 chi nhánh</option>
+                            @foreach (var item in ViewBag.CinemaList as IEnumerable<CinemaDto>)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label">Tên phòng</label>
+                        <input asp-for="Name" type="text" class="form-control border ps-2" id="title">
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="SeatCapacity" class="form-label">Số lượng ghế</label>
+                        <input asp-for="SeatCapacity" value="96" readonly type="number" class="form-control border ps-2">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary w-30">Tạo</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+    </script>
+}

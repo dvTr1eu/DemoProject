@@ -1,0 +1,64 @@
+﻿@using Core.DTOs
+@model Core.DTOs.UserDto
+@{
+    Layout = "_Layout";
+    IEnumerable<BookingDto> bookingList = ViewBag.BookingList;
+}
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container light-style flex-grow-1 container-p-y" style="margin-top: 186px; margin-bottom: 70px; height: 460px">
+    <div class="card overflow-hidden">
+        <div class="row no-gutters row-bordered row-border-light">
+            <div class="col-md-3 pt-0">
+                <div class="list-group list-group-flush account-settings-links">
+                    <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">Tổng quan</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#ticket-bought">Vé đã mua</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="tab-content">
+                    <div class="tab-pane fade active show" id="account-general">
+                        <div class="card-body media align-items-center">
+                            <img id="avatarPreview" src="" alt="Avatar" class="d-block ui-w-80">
+                            <div class="media-body ml-4" style="padding-top: 10px;">
+                                <form method="post" enctype="multipart/form-data">
+                                    <input  hidden />
+                                    <label class="btn btn-outline-primary">
+                                        Cập nhật ảnh đại diện
+                                        <input  type="file" class="account-settings-fileinput" onchange="previewAvatar(event)">
+                                    </label> &nbsp;
+
+                                    <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
+
+                                    <button type="submit" class="btn btn-primary mt-2">Save</button>
+                                </form>
+                            </div>
+                        </div>
+                        <hr class="border-light m-0">
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <p>Xin chào,</p>
+                            </div>
+                            <div class="form-group">
+                                <p>E-mai: </p>
+                            </div>
+                            <div class="form-group">
+                                <p>Số điện thoại: </p>
+                            </div>
+                            <div class="form-group">
+                                <p>Địa chỉ:  </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade " id="ticket-bought">
+                        <div class="card-body pb-2">
+                            @await Html.PartialAsync("_BookingListPartialView", bookingList)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

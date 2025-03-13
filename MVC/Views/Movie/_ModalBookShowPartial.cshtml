@@ -1,0 +1,22 @@
+﻿@using MVC.Helpers
+@model Core.DTOs.MovieBookingDto
+
+<div class="mb-3">
+    <label class="form-label text-dark">Chọn ngày</label>
+    <select class="form-select text-dark" id="dateSelect">
+        <option value="" disabled selected>Chọn ngày chiếu</option>
+        @if (Model.DistinctShowDays.Any())
+        {
+            @foreach (var item in Model.DistinctShowDays)
+            {
+                <option class="text-dark" value="@item">@Utilities.FormatDate(item)</option>
+            }
+        }
+        else
+        {
+            <option disabled selected class="text-dark" value="">Hiện tại chưa có ngày chiếu</option>
+        }
+    </select>
+    <div class="pt-4" id="cinemaList">
+    </div>
+</div>

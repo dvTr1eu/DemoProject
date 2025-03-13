@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\InternDeha\\Demo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|e:\\interndeha\\demo\\mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|solutionrelative:mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2FE697A-B880-4EA2-8FFE-E3BCCAC94D5C}|Infrastructure\\Infrastructure.csproj|e:\\interndeha\\demo\\infrastructure\\services\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2FE697A-B880-4EA2-8FFE-E3BCCAC94D5C}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\services\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|e:\\interndeha\\demo\\mvc\\areas\\admin\\views\\adminbooking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|solutionrelative:mvc\\areas\\admin\\views\\adminbooking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|e:\\interndeha\\demo\\mvc\\areas\\admin\\controllers\\adminbookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|solutionrelative:mvc\\areas\\admin\\controllers\\adminbookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|e:\\interndeha\\demo\\mvc\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|solutionrelative:mvc\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|e:\\interndeha\\demo\\mvc\\areas\\admin\\controllers\\admincinemacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|solutionrelative:mvc\\areas\\admin\\controllers\\admincinemacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\InternDeha\\Demo\\MVC\\Program.cs",
+              "RelativeDocumentMoniker": "MVC\\Program.cs",
+              "ToolTip": "E:\\InternDeha\\Demo\\MVC\\Program.cs",
+              "RelativeToolTip": "MVC\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA8wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T14:05:15.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookingService.cs",
+              "DocumentMoniker": "E:\\InternDeha\\Demo\\Infrastructure\\Services\\BookingService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Services\\BookingService.cs",
+              "ToolTip": "E:\\InternDeha\\Demo\\Infrastructure\\Services\\BookingService.cs",
+              "RelativeToolTip": "Infrastructure\\Services\\BookingService.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAGkAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T10:12:49.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\InternDeha\\Demo\\MVC\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "MVC\\Controllers\\AccountController.cs",
+              "ToolTip": "E:\\InternDeha\\Demo\\MVC\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "MVC\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAiwEoAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T09:34:00.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminCinemaController.cs",
+              "DocumentMoniker": "E:\\InternDeha\\Demo\\MVC\\Areas\\Admin\\Controllers\\AdminCinemaController.cs",
+              "RelativeDocumentMoniker": "MVC\\Areas\\Admin\\Controllers\\AdminCinemaController.cs",
+              "ToolTip": "E:\\InternDeha\\Demo\\MVC\\Areas\\Admin\\Controllers\\AdminCinemaController.cs",
+              "RelativeToolTip": "MVC\\Areas\\Admin\\Controllers\\AdminCinemaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T09:27:32.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\InternDeha\\Demo\\MVC\\Areas\\Admin\\Views\\AdminBooking\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVC\\Areas\\Admin\\Views\\AdminBooking\\Index.cshtml",
+              "ToolTip": "E:\\InternDeha\\Demo\\MVC\\Areas\\Admin\\Views\\AdminBooking\\Index.cshtml",
+              "RelativeToolTip": "MVC\\Areas\\Admin\\Views\\AdminBooking\\Index.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEUAAAB2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T09:23:15.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminBookingController.cs",
+              "DocumentMoniker": "E:\\InternDeha\\Demo\\MVC\\Areas\\Admin\\Controllers\\AdminBookingController.cs",
+              "RelativeDocumentMoniker": "MVC\\Areas\\Admin\\Controllers\\AdminBookingController.cs",
+              "ToolTip": "E:\\InternDeha\\Demo\\MVC\\Areas\\Admin\\Controllers\\AdminBookingController.cs",
+              "RelativeToolTip": "MVC\\Areas\\Admin\\Controllers\\AdminBookingController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T09:20:15.23Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

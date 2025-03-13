@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Core.DTOs.BookingDto>
+
+@if (Model != null)
+{
+    <div class="card mb-3 shadow-sm text-dark">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">LỊCH SỬ GIAO DỊCH</h5>
+        </div>
+        <div class="card-body">
+            @foreach (var movieItem in Model)
+            {
+                <p><strong>Mã Đặt Vé:</strong> @movieItem.Id</p>
+                <p><strong>Trạng thái: </strong> @movieItem?.Payment.Status</p>
+                <div class="d-flex">
+                    <img src="@movieItem.Show.Movie.Poster" class="img-thumbnail me-3" style="width: 120px; height: auto;margin-right:10px" alt="Movie Poster">
+                    <div>
+                        <h5 class="fw-bold text-dark">@movieItem?.Show?.Movie?.Title</h5>
+                        <span class="badge bg-warning text-dark mb-3">@movieItem?.Show?.Movie?.LimitAge</span>
+                        <p class="mb-3">@movieItem?.Show?.ShowDay.ToString("dd/MM/yyyy")</p>
+                        <p class="mb-3"><strong>From:</strong> @string.Join(", ", movieItem?.BookingSeats?.Select(bs => bs.ShowtimeDetail.ShowTime).Distinct())</p>
+                        <p class="mb-3"><strong>@movieItem?.Show?.Cinema.Name</strong></p>
+                        <p class="mb-3">Room @movieItem?.Show?.Room.Name (@string.Join(", ", movieItem.BookingSeats.Select(bs => bs.Seat.SeatRow.ToString() + bs.Seat.SeatNumber)))</p>
+                        <p class="fw-bold text-danger">@movieItem?.TotalAmount.ToString("##,###") đ</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div><h1>List null</h1></div>
+}
+

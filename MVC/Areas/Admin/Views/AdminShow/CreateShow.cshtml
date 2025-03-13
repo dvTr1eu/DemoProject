@@ -1,0 +1,139 @@
+﻿@using Core.DTOs
+@model Core.DTOs.ShowDto
+@{
+    ViewData["Title"] = "CreateShow";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-6 mx-auto">
+    <div class="card shadow p-4">
+        <h4 class="text-center mb-4">Tạo Lịch Chiếu</h4>
+        @using (Html.BeginForm("CreateShow", "AdminShow", null, FormMethod.Post, false, new { }))
+        {
+            <div class="mb-3">
+                <label class="form-label">Chọn chi nhánh:</label>
+                <select asp-for="CinemaId" class="form-select" id="cinemaSelect">
+                    <option class="ps-4" value="" disabled selected>Chọn chi nhánh</option>
+                    @if (ViewBag.CinemaList as IEnumerable<CinemaDto> != null)
+                    {
+                        @foreach (var item in ViewBag.CinemaList)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Chọn phòng:</label>
+                <select asp-for="RoomId" class="form-select" id="roomSelect">
+                    <option class="ps-4" value="" disabled selected>Chọn phòng</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Chọn phim:</label>
+                <select asp-for="MovieId" class="form-select" id="cinemaSelect">
+                    <option class="ps-4" value="" disabled selected>Chọn phim</option>
+                    @if (ViewBag.MovieList as IEnumerable<MovieDto> != null)
+                    {
+                        @foreach (var item in ViewBag.MovieList)
+                        {
+                            <option value="@item.Id">@item.Title</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Giá vé: </label>
+                <input asp-for="TicketPrice" type="text" class="form-control border ps-2" />
+            </div>
+            <div class="mb-3 d-flex">
+                <div class="pe-7">
+                    <label class="form-label">Ngày chiếu: </label>
+                    <input asp-for="ShowDay" type="date" class="form-control border ps-2" />
+                </div>
+                <div>
+                    <label class="form-label">Giờ chiếu: </label>
+                    <div id="timeInputs">
+                        <div class="time-input-group d-flex align-items-center mb-2">
+                            <input type="time" class="form-control" name="ShowTimeDetails[0]" />
+                            <button type="button" class="btn btn-danger btn-sm ml-2 delete-time">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" id="addTimeButton" class="btn btn-success btn-sm mt-2"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            <div class="mb-3">
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary w-30">Tạo</button>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#cinemaSelect").change(function () {
+                var cinemaId = $(this).val();
+                $("#roomSelect").empty(); 
+
+                $.ajax({
+                    type: "GET",
+                    url: "/Admin/AdminShow/GetRoomsByCinema", 
+                    data: { cinemaId: cinemaId },
+                    success: function (data) {
+                        $("#roomSelect").append('<option value="" disabled selected>Chọn 1 phòng chiếu</option>');
+                        $.each(data, function (i, item) {
+                            $("#roomSelect").append('<option value="' + item.value + '">' + item.text + '</option>');
+                        });
+                    },
+                    error: function (error) {
+                        console.log("Error:" + error);
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const addTimeButton = document.getElementById('addTimeButton');
+            const timeInputsContainer = document.getElementById('timeInputs');
+            let timeInputCount = document.querySelectorAll('.time-input-group').length; // Lấy số lượng input ban đầu
+
+            // Xóa giờ chiếu (áp dụng cho các input đã load sẵn)
+            document.querySelectorAll('.delete-time').forEach(button => {
+                button.addEventListener('click', function () {
+                    this.parentElement.remove();
+                });
+            });
+
+            // Thêm giờ chiếu mới
+            addTimeButton.addEventListener('click', function () {
+                const div = document.createElement('div');
+                div.classList.add('time-input-group', 'd-flex', 'align-items-center', 'mb-2');
+
+                const timeInput = document.createElement('input');
+                timeInput.type = 'time';
+                timeInput.name = `ShowTimeDetails[${timeInputCount}]`;
+                timeInput.classList.add('form-control');
+
+                const deleteButton = document.createElement('button');
+                deleteButton.type = 'button';
+                deleteButton.classList.add('btn', 'btn-danger', 'btn-sm', 'ml-2', 'delete-time');
+                deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
+
+                deleteButton.addEventListener('click', function () {
+                    div.remove();
+                });
+
+                div.appendChild(timeInput);
+                div.appendChild(deleteButton);
+                timeInputsContainer.appendChild(div);
+
+                timeInputCount++;
+            });
+        });
+    </script>
+}

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Core.Entities.Room>
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div class="pb-3" style="display: flex; justify-content: end">
+            <a asp-action="CreateRoom" asp-controller="AdminRoom"
+               class="btn btn-outline-primary btn-sm mb-0 me-3">
+                Thêm mới phòng chiếu
+            </a>
+        </div>
+        <div class="card my-4 pt-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                    <h6 class="text-white text-capitalize ps-3">Phòng chiếu</h6>
+                </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+                <div class="table-responsive p-0">
+                    <table class="table align-items-center mb-0">
+                        <thead>
+                        <tr>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 text-center">
+                                STT
+                            </th>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 text-center">
+                                Tên
+                            </th>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 text-center">
+                                Số lượng ghế
+                            </th>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 text-center">
+                                Chi nhánh
+                            </th>
+                            <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                Chức năng
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @if (Model != null)
+                        {
+                            int i = 0;
+                            foreach (var item in Model)
+                            {
+                                i++;
+                                <tr>
+                                    <td>
+                                        <h6 class="mb-0 text-sm ps-4 text-center">@i</h6>
+                                    </td>
+                                    <td>
+                                        <h6 class="mb-0 text-sm text-center">@item.Name</h6>
+
+
+                                    </td>
+                                    <td>
+                                        <h6 class="mb-0 text-sm text-center">@item.SeatCapacity</h6>
+                                    </td>
+                                    <td>
+                                        <h6 class="mb-0 text-sm text-center">@item.Cinema.Name</h6>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <a asp-controller="AdminGenre" asp-action="UpdateGenre" asp-route-id="@item.Id"
+                                           class="text-secondary font-weight-bold text-md ps-3 border-start-lg">
+                                            Sửa
+                                        </a>
+                                        <a class="text-danger font-weight-bold text-md ps-3 border-start-lg"
+                                                onclick="if (confirm('Bạn có chắn muốn xóa ?')) { location.href = '@Url.Action("Delete", new { id = item.Id })'; }">
+                                                 Xóa
+                                             </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

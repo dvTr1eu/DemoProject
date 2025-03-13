@@ -1,0 +1,83 @@
+﻿@using MVC.Helpers
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<Core.DTOs.CinemaDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="pb-3" style="display: flex; justify-content: end">
+            <a asp-action="CreateCinema" asp-controller="AdminCinema"
+               class="btn btn-outline-primary btn-sm mb-0 me-3">
+                Thêm mới rạp
+            </a>
+        </div>
+        <div class="card my-4 pt-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                    <h6 class="text-white text-capitalize ps-3">Chi nhánh</h6>
+                </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+                <div class="table-responsive p-0 table-striped">
+                    <table class="table align-items-center mb-0">
+                        <thead>
+                            <tr>
+                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    ID
+                                </th>
+                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Tên rạp
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Vị trí
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Địa chỉ
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Chức năng
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="align-middle text-center" style="white-space: normal">
+                                            <h6 style="font-size: 12px">@item.Id</h6>
+                                        </td>
+                                        <td class="align-middle text-center" style="white-space: normal">
+                                            <h6 style="font-size: 12px">@item.Name</h6>
+                                        </td>
+                                        <td class="align-middle text-center" style="white-space: normal">
+                                            <iframe style="width: 150px; height: 150px" src="@item.ImageMap"></iframe>
+                                        </td>
+                                        <td class="align-middle text-center" style="white-space: normal">
+                                            <h6 style="font-size: 12px">@item.Address</h6>
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <a asp-controller="AdminCinema" asp-action="UpdateCinema" asp-route-id="@item.Id" class="text-secondary font-weight-bold text-md ps-3 border-start-lg">
+
+                                                Sửa
+                                            </a>
+                                            <a class="text-danger font-weight-bold text-md ps-3 border-start-lg cursor-pointer"
+                                               onclick="if (confirm('Bạn có chắn muốn xóa ?')) { location.href = '@Url.Action("DeleteCinema", new { id = item.Id })'; }">
+                                                Xóa
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

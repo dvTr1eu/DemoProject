@@ -1,0 +1,115 @@
+﻿@using Core.DTOs
+@model Core.DTOs.MovieDto
+@{
+    ViewData["Title"] = "UpdateMovie";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12 d-flex">
+        <div class="col-6">
+            @using (Html.BeginForm("UpdateMovie", "AdminMovie", new {Model.Id}, FormMethod.Post, false, new { enctype = "multipart/form-data" }))
+            {
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label">Tên phim</label>
+                    <input asp-for="Title" type="text" class="form-control border ps-2" id="title">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Poster" class="form-label">Poster</label>
+                    <input name="inputFile" type="file" class="form-control border ps-2" id="poster" accept="image/*">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Mô tả</label>
+                    <textarea asp-for="Description"class="form-control border ps-2" id="description" rows="3">@Model.Description</textarea>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Director" class="form-label">Đạo diễn</label>
+                    <input asp-for="Director" type="text" class="form-control border ps-2" id="director">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Actors" class="form-label">Diễn viên</label>
+                    <input asp-for="Actors" type="text" class="form-control border ps-2" id="actors">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <label for="GenreIds">Chọn thể loại:</label>
+                    <div>
+                        @foreach (var genre in ViewBag.Genres as IEnumerable<GenreDto>)
+                        {
+                            <div class="form-check">
+                                <input class="form-check-input" name="GenreId" type="checkbox"
+                                @(Model.MovieTypes.Any(mt => mt.GenreId == genre.Id) ? "checked" : "")
+                                       value="@genre.Id" id="genre">
+                                <label class="form-check-label" asp-for="GenreId">
+                                    @genre.Name
+                                </label>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ScreeningDay" class="form-label">Ngày chiếu</label>
+                    <input asp-for="ScreeningDay" type="date" class="form-control border ps-2" id="screeningday">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="DurationMinutes" class="form-label">Thời lượng</label>
+                    <input asp-for="DurationMinutes" type="number" class="form-control border ps-2" id="durationminutes">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="TrailerUrl" class="form-label">Trailer</label>
+                    <input asp-for="TrailerUrl" type="text" class="form-control border ps-2" id="trailerurl">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="LimitAge" class="form-label">Độ tuổi</label>
+                    <input asp-for="LimitAge" type="text" class="form-control border ps-2" id="limitage">
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Language" class="form-label">Ngôn ngữ</label>
+                    <input asp-for="Language" type="text" class="form-control border ps-2" id="language">
+                </div>
+
+                <label class="form-label">Trạng thái</label>
+                <div class="form-check form-switch">
+                    <input asp-for="Status" class="form-check-input" type="checkbox" name="Status" id="status" onchange="toggleStatusText()">
+                    <label class="form-check-label" asp-for="Status" id="statusLabel">@(Model.Status ? "Đang chiếu" : "Sắp chiếu")</label>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary w-20">Cập nhật</button>
+                </div>
+            }
+        </div>
+        <div class="col-6 d-flex justify-content-center">
+            <img id="view-img" src="@Model.Poster"
+                 style="width:178px; height: 283px; object-fit:contain;image-rendering: pixelated;" 
+                 onerror="this.style.display='none';"
+                 />
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function toggleStatusText() {
+            var checkbox = document.getElementById("status");
+            var label = document.getElementById("statusLabel");
+
+            label.textContent = checkbox.checked ? "Đang chiếu" : "Sắp chiếu";
+        }
+
+        document.getElementById("poster").addEventListener("change", function (event) {
+            var file = event.target.files[0];
+            var imgElement = document.getElementById("view-img");
+
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    imgElement.src = e.target.result;
+                    imgElement.style.display = "block"; 
+                };
+                reader.readAsDataURL(file);
+            } else {
+                imgElement.style.display = "none"; 
+            }
+        });
+    </script>
+}

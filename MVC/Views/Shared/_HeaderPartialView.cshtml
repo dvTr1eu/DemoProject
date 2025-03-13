@@ -1,0 +1,64 @@
+﻿<header class="header-section">
+    <div class="container">
+        <div class="header-wrapper">
+            <div class="logo">
+                <a asp-controller="Home" asp-action="Index">
+                    <img src="~/movieassets/images/logo/logo.png" alt="logo">
+                </a>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                </li>
+                <li>
+                    <a asp-action="Index" asp-controller="Movie">phim</a>
+                </li>
+                <li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a href="#0">Tài khoản</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="/Account/Index">
+                                    Thông tin
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Account/ChangePassword">Đổi mật khẩu</a>
+                            </li>
+                            <li>
+                                <a href="index-2.html">Vé của tôi</a>
+                            </li>
+                        </ul>
+                    }
+                </li>
+                @if (User.IsInRole("Admin"))
+                {
+                    <li>
+                        <a asp-area="Admin" asp-controller="AdminHome" asp-action="Index">Quản lý</a>
+                    </li>
+                }
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li>
+                        <a href="/Account/Logout">
+                            Đăng xuất
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="header-button pr-0">
+                        <a href="/Account/SignUp">Đăng nhập</a>
+                    </li>
+                }
+            </ul>
+            <div class="header-bar d-lg-none">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</header>
+

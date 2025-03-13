@@ -1,0 +1,13 @@
+E:\InternDeha\Demo\Core\bin\Debug\net8.0\Core.deps.json
+E:\InternDeha\Demo\Core\bin\Debug\net8.0\Core.dll
+E:\InternDeha\Demo\Core\bin\Debug\net8.0\Core.pdb
+E:\InternDeha\Demo\Core\obj\Debug\net8.0\Core.csproj.AssemblyReference.cache
+E:\InternDeha\Demo\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\InternDeha\Demo\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+E:\InternDeha\Demo\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+E:\InternDeha\Demo\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+E:\InternDeha\Demo\Core\obj\Debug\net8.0\Core.dll
+E:\InternDeha\Demo\Core\obj\Debug\net8.0\refint\Core.dll
+E:\InternDeha\Demo\Core\obj\Debug\net8.0\Core.pdb
+E:\InternDeha\Demo\Core\obj\Debug\net8.0\ref\Core.dll
+E:\InternDeha\Demo\Core\obj\Debug\net8.0\Core.sourcelink.json

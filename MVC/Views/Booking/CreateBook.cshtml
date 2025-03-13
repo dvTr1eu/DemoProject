@@ -1,0 +1,139 @@
+﻿@model Core.DTOs.BookingViewDto
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="movie-section padding-top padding-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 d-flex flex-column align-items-center">
+            <div class="screen-area text-center">
+            <div class="screen-thumb">
+                <img src="~/movieassets/images/movie/screen-thumb.png" alt="movie" class="img-fluid">
+            </div>
+            <h4 class="screen">Screen</h4>
+                <div class="screen-wrapper">
+                <ul class="seat-area">
+                @{
+                    char[] rowLabels = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H' };
+                    int seatsPerRow = 12;
+                }
+                @foreach (var row in rowLabels)
+                {
+                    <li class="seat-line">
+                        <span>@row</span>
+                        <ul class="seat--area">
+                            @for (int i = 1; i <= seatsPerRow; i++)
+                            {
+                                var seat = Model.Seats.FirstOrDefault(s => s.SeatRow.ToString() == row.ToString() && s.SeatNumber == i);
+                                bool isBooked = Model.BookedSeats.Any(b => b.SeatRow == row && b.SeatNumber == i);
+
+                                <li class="front-seat">
+                                    <ul>
+                                        <li class="single-seat @(isBooked ? "seat-booked" : "seat-free")">
+                                            <img src="~/movieassets/images/movie/@(isBooked ? "seat01.png" : "seat01-free.png")" alt="seat">
+                                            <span class="sit-num">@($"{row}{i}")</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+                </ul>
+                </div>
+            </div>
+            <div class="d-flex flex-row justify-content-between">
+                <div>
+                    <img src="~/movieassets/images/movie/seat01-free.png" />
+                    <span>Ghế trống</span>
+                </div>
+                <div class="pl-5 pr-5">
+                    <img src="~/movieassets/images/movie/seat01-booked.png" />
+                    <span>Checked</span>
+                </div>
+                <div>
+                    <img src="~/movieassets/images/movie/seat01.png" />
+                    <span>Đã chọn</span>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-md-4 height-100">
+                <div class="card shadow p-4">
+                    <h4 class="text-center text-dark pb-4">Thông Tin Đặt Vé</h4>
+                    @using (Html.BeginForm("CreateBook", "Booking",null,FormMethod.Post,false, new {}))
+                    {
+                        <input type="hidden" asp-for="RoomId" value="@Model.RoomId" />
+                        <input type="hidden" asp-for="ShowTime" value="@Model.ShowTime" />
+                        <input type="hidden" asp-for="ShowId" value="@Model.ShowId" />
+                        <input type="hidden" id="selectedSeatsInput" name="SelectedSeats" />
+                        <input type="hidden" id="totalAmountInput" name="TotalAmount" />
+                        <p class="hidden"></p>
+                        <p class=" text-dark"><strong>Phim:</strong> @Model.MovieTitle</p>
+                        <p class=" text-dark"><strong>Ngày chiếu:</strong> @Model.ShowDay</p>
+                        <p class=" text-dark"><strong>Suất chiếu:</strong> @Model.ShowTime</p>
+                        <p class=" text-dark">
+                            <strong>Phòng:</strong> @Model.RoomName
+                        </p>
+                        <p class="text-dark seat-info">
+                            <strong>Ghế:</strong> Chưa chọn
+                        </p>
+                        <p class=" text-dark">
+                            <strong>Tổng tiền:</strong> <span id="total-price">0đ</span>
+                        </p>
+                        <button class="btn btn-success w-100" type="submit">Thanh Toán</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts
+{
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+                const selectedSeats = new Set();
+                const seatElements = document.querySelectorAll(".single-seat");
+                const seatInfoElement = document.querySelector("p.seat-info");
+                const totalPriceElement = document.getElementById("total-price");
+
+                const ticketPrice = @Model.TicketPrice;
+
+                seatElements.forEach(seat => {
+                    seat.addEventListener("click", function () {
+                        const seatNumber = this.querySelector(".sit-num").innerText;
+
+                        if (selectedSeats.has(seatNumber)) {
+                            selectedSeats.delete(seatNumber);
+                            this.classList.remove("seat-selected");
+                            this.querySelector("img").src = "/movieassets/images/movie/seat01-free.png";
+                        } else {
+                            selectedSeats.add(seatNumber);
+                            this.classList.add("seat-selected");
+                            this.querySelector("img").src = "/movieassets/images/movie/seat01-booked.png";
+                        }
+
+                        updateSelectedSeats();
+                    });
+                });
+
+                function updateSelectedSeats() {
+                    const seatList = Array.from(selectedSeats).join(", ");
+                    if (seatList) {
+                        seatInfoElement.innerHTML = `<strong>Ghế:</strong> ${seatList}`;
+                    } else {
+                        seatInfoElement.innerHTML = `<strong>Ghế:</strong> Chưa chọn`;
+                    }
+
+                    const totalPrice = selectedSeats.size * ticketPrice;
+                    totalPriceElement.innerText = `${totalPrice.toLocaleString("vi-VN")}đ`;
+
+                    selectedSeatsInput.value = seatList;
+                    totalAmountInput.value = totalPrice;
+                }
+            });
+    </script>
+}

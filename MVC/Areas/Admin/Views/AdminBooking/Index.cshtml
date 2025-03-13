@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Core.DTOs.BookingDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="pb-3" style="display: flex; justify-content: end">
+        </div>
+        <div class="card my-4 pt-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                    <h6 class="text-white text-capitalize ps-3">Booking</h6>
+                </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+                <div class="table-responsive p-0 table-striped">
+                    <table class="table align-items-center mb-0">
+                        <thead>
+                            <tr>
+                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    ID
+                                </th>
+                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Tên khách
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Ngày đặt
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Tổng tiền
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Phương thức
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Ngày thanh toán
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Trạng thái
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Chức năng
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="align-middle text-center" style="white-space: normal">
+                                            <h6 style="font-size: 12px">@item.Id</h6>
+                                        </td>
+                                        <td class="align-middle text-center" style="white-space: normal">
+                                            <h6 style="font-size: 12px">@item.User.FullName</h6>
+                                        </td>
+                                        <td class="align-middle text-center" style="white-space: normal">
+                                            <h6 style="font-size: 12px">@item.BookingTime.ToString("dd/MM/yyyy")</h6>
+                                        </td>
+                                        <td class="align-middle text-center" style="white-space: normal">
+                                            <h6 style="font-size: 12px">@item.TotalAmount.ToString("##,###") VNĐ</h6>
+                                        </td>
+                                        <td class="align-middle text-center" style="white-space: normal">
+                                            <h6 style="font-size: 12px">@item.Payment.PaymentMethod</h6>
+                                        </td>
+                                        <td class="align-middle text-center" style="white-space: normal">
+                                            <h6 style="font-size: 12px">@item.Payment.PaymentDate.ToString("dd/MM/yyyy")</h6>
+                                        </td>
+                                        <td class="align-middle text-center" style="white-space: normal">
+                                            <h6 style="font-size: 12px">@item.Payment.Status</h6>
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <a asp-route-id="@item.Id" class="text-secondary font-weight-bold text-md ps-3 border-start-lg">
+                                                Xem
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

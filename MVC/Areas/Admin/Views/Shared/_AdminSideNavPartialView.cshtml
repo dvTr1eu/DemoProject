@@ -1,0 +1,94 @@
+﻿
+<button class="btn btn-primary d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidenav-main"
+        aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+</button>
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2  bg-white my-2 d-none d-md-block"
+    id="sidenav-main">
+    <div class="sidenav-header">
+        <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+            aria-hidden="true" id="iconSidenav"></i>
+        <a class="navbar-brand px-4 py-3 m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard "
+            target="_blank">
+            <img src="~/adminAssets/img/logo-ct-dark.png" class="navbar-brand-img" width="26" height="26"
+                alt="main_logo">
+            <span class="ms-1 text-sm text-dark">Creative Tim</span>
+        </a>
+    </div>
+    <hr class="horizontal dark mt-0 mb-2">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Admin" asp-controller="AdminHome" asp-action="Index">
+                    <i class="material-symbols-rounded opacity-5">dashboard</i>
+                    <span class="nav-link-text ms-1">Trang chủ</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Admin" asp-controller="AdminRole" asp-action="Index">
+                    <i class="material-symbols-rounded opacity-5">shield_person</i>
+                    <span class="nav-link-text ms-1">Quản lý quyền</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Admin" asp-controller="AdminUser" asp-action="Index">
+                    <i class="material-symbols-rounded opacity-5">shield_person</i>
+                    <span class="nav-link-text ms-1">Quản lý tài khoản</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Admin" asp-controller="AdminMovie" asp-action="Index">
+                    <i class="material-symbols-rounded opacity-5">lyrics</i>
+                    <span class="nav-link-text ms-1">Quản lý phim</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Admin" asp-controller="AdminGenre" asp-action="Index">
+                    <i class="material-symbols-rounded opacity-5">genres</i>
+                    <span class="nav-link-text ms-1">Quản lý thể loại</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Admin" asp-controller="AdminShow" asp-action="Index">
+                    <i class="material-symbols-rounded opacity-5">album</i>
+                    <span class="nav-link-text ms-1">Quản lý lịch chiếu</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Admin" asp-controller="AdminBooking" asp-action="Index">
+                    <i class="material-symbols-rounded opacity-5">album</i>
+                    <span class="nav-link-text ms-1">Quản lý đặt vé</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Admin" asp-controller="AdminCinema" asp-action="Index">
+                    <i class="material-symbols-rounded opacity-5">artist</i>
+                    <span class="nav-link-text ms-1">Quản lý chi nhánh</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Admin" asp-controller="AdminRoom" asp-action="Index">
+                    <i class="material-symbols-rounded opacity-5">artist</i>
+                    <span class="nav-link-text ms-1">Quản lý phòng chiếu</span>
+                </a>
+            </li>
+
+            <li class="nav-item mt-3">
+                <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Account pages</h6>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="../pages/profile.html">
+                    <i class="material-symbols-rounded opacity-5">person</i>
+                    <span class="nav-link-text ms-1">Profile</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="/Home/Index">
+                    <i class="material-symbols-rounded opacity-5">login</i>
+                    <span class="nav-link-text ms-1">Quay lại trang chính</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>

@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model             Core.DTOs.RoleDto
+@{
+    ViewData["Title"] = "CreateRole";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Thêm mới sản phẩm</h1>
+<form asp-action="CreateRole" method="post" class="input-group mb-3">
+        <input type="text" asp-for="RoleName" class="form-control" placeholder="Thêm mới quyền" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Thêm</button>
+</form>

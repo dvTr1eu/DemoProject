@@ -1,0 +1,44 @@
+﻿@using MVC.Helpers
+@model IEnumerable<Core.DTOs.MovieDto>
+@if (Model != null)
+{
+    foreach (var movie in Model)
+    {
+        <div class="col-sm-4 col-lg-3">
+            <div class="movie-grid">
+                <div class="movie-thumb c-thumb">
+                    <a asp-controller="Movie" asp-action="MovieDetail" asp-route-movieId="@movie.Id">
+                        <img style="height: 387px" src="@movie.Poster" alt="movie">
+                    </a>
+                </div>
+                <div class="movie-content bg-one">
+                    <h5 class="title m-0">
+                        <a asp-controller="Movie" asp-action="MovieDetail" asp-route-movieId="@movie.Id">@movie.Title</a>
+                    </h5>
+                    <div style="">
+                        <span style="font-weight: bold" class="fw-bold">Thể loại: </span>
+                        <span>
+                            @if (movie.GenreNames != null && movie.GenreNames.Any())
+                            {
+                                @string.Join(" , ", movie.GenreNames)
+                            }
+                            else
+                            {
+                                <span>N/A</span>
+                            }
+
+                        </span>
+                    </div>
+                    <div style="">
+                        <span style="font-weight: bold" class="fw-bold">Thời lượng: </span>
+                        <span>@movie.DurationMinutes phút</span>
+                    </div>
+                    <div style="">
+                        <span style="font-weight: bold" class="fw-bold">Khởi chiếu: </span>
+                        <span>@Utilities.FormatDate(@movie.ScreeningDay)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

@@ -1,0 +1,16 @@
+E:\InternDeha\Demo\Application\bin\Debug\net8.0\Application.deps.json
+E:\InternDeha\Demo\Application\bin\Debug\net8.0\Application.dll
+E:\InternDeha\Demo\Application\bin\Debug\net8.0\Application.pdb
+E:\InternDeha\Demo\Application\bin\Debug\net8.0\Core.dll
+E:\InternDeha\Demo\Application\bin\Debug\net8.0\Core.pdb
+E:\InternDeha\Demo\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+E:\InternDeha\Demo\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\InternDeha\Demo\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+E:\InternDeha\Demo\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+E:\InternDeha\Demo\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+E:\InternDeha\Demo\Application\obj\Debug\net8.0\Applicat.44B5EDA2.Up2Date
+E:\InternDeha\Demo\Application\obj\Debug\net8.0\Application.dll
+E:\InternDeha\Demo\Application\obj\Debug\net8.0\refint\Application.dll
+E:\InternDeha\Demo\Application\obj\Debug\net8.0\Application.pdb
+E:\InternDeha\Demo\Application\obj\Debug\net8.0\ref\Application.dll
+E:\InternDeha\Demo\Application\obj\Debug\net8.0\Application.sourcelink.json
