@@ -102,13 +102,13 @@ namespace MVC.Controllers
         public async Task<IActionResult> PaymentCallBack()
         {
             var response = vnPayService.PaymentExecute(Request.Query);
+            string jsonBooking = HttpContext.Session.GetString("PendingBooking");
+            var bookingData = JsonConvert.DeserializeObject<dynamic>(jsonBooking);
+            var seatList = ((string)bookingData.SelectedSeats).Split(',').Select(s => s.Trim()).ToList();
             if (response != null && response.VnPayResponseCode == "00")
             {
-                string jsonBooking = HttpContext.Session.GetString("PendingBooking");
                 if (!string.IsNullOrEmpty(jsonBooking))
                 {
-                    var bookingData = JsonConvert.DeserializeObject<dynamic>(jsonBooking);
-
                     var booking = new Booking
                     {
                         UserId = bookingData.UserId,
@@ -129,7 +129,6 @@ namespace MVC.Controllers
                     var paymentAdd = mapper.Map<Payment>(payment);
                     await paymentService.CreatePayment(paymentAdd);
 
-                    var seatList = ((string)bookingData.SelectedSeats).Split(',').Select(s => s.Trim()).ToList();
 
                     var showTimeDetails = await showtimeDetailService.FindByShowTime(TimeOnly.Parse(bookingData.ShowTime.ToString()));
                     foreach (var seat in seatList)
@@ -161,8 +160,12 @@ namespace MVC.Controllers
 
                 return RedirectToAction("Success");
             }
-            TempData["Message"] = $"Lỗi thanh toán VnPay: {response.VnPayResponseCode}";
-            return RedirectToAction("AccessDenied", "Account");
+            else
+            {
+                await seatService.ReleaseLockedSeats(seatList, Convert.ToInt32(bookingData.ShowId));
+                TempData["Message"] = $"Lỗi thanh toán VnPay: {response.VnPayResponseCode}";
+                return RedirectToAction("PaymentFail");
+            }
         }
 
         public IActionResult PaymentFail()

@@ -42,6 +42,16 @@ namespace MVC
             services.AddDbContext<DemoDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
+            var useOracle = builder.Configuration.GetValue<bool>("UseOracle");
+            //if (useOracle)
+            //{
+
+            //}
+            //else
+            //{
+
+            //}
+
             services.AddIdentity<User, IdentityRole>(options =>
                 {
                     options.Password.RequireDigit = false;

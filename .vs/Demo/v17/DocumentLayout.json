@@ -7,41 +7,25 @@
       "RelativeMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|solutionrelative:mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|e:\\interndeha\\demo\\mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|solutionrelative:mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|e:\\interndeha\\demo\\mvc\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|solutionrelative:mvc\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3BD6E769-35FD-44F9-81B4-F0004EED141E}|UnitTest\\UnitTest.csproj|e:\\interndeha\\demo\\unittest\\movieservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3BD6E769-35FD-44F9-81B4-F0004EED141E}|UnitTest\\UnitTest.csproj|solutionrelative:unittest\\movieservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|e:\\interndeha\\demo\\mvc\\areas\\admin\\views\\adminshow\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|solutionrelative:mvc\\areas\\admin\\views\\adminshow\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|e:\\interndeha\\demo\\mvc\\areas\\admin\\controllers\\adminshowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F8F51249-4BA1-492A-A951-74C33CD0B5ED}|MVC\\MVC.csproj|solutionrelative:mvc\\areas\\admin\\controllers\\adminshowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2FE697A-B880-4EA2-8FFE-E3BCCAC94D5C}|Infrastructure\\Infrastructure.csproj|e:\\interndeha\\demo\\infrastructure\\services\\showservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2FE697A-B880-4EA2-8FFE-E3BCCAC94D5C}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\services\\showservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F32CC0FC-0B31-47E8-A2D3-258C0B3DB6F8}|Application\\Application.csproj|e:\\interndeha\\demo\\application\\services\\ishowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F32CC0FC-0B31-47E8-A2D3-258C0B3DB6F8}|Application\\Application.csproj|solutionrelative:application\\services\\ishowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BFB44111-894E-47DC-83E6-E0EEBAE3100D}|Core\\Core.csproj|e:\\interndeha\\demo\\core\\repositories\\ishowrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BFB44111-894E-47DC-83E6-E0EEBAE3100D}|Core\\Core.csproj|solutionrelative:core\\repositories\\ishowrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2FE697A-B880-4EA2-8FFE-E3BCCAC94D5C}|Infrastructure\\Infrastructure.csproj|e:\\interndeha\\demo\\infrastructure\\repositories\\showrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2FE697A-B880-4EA2-8FFE-E3BCCAC94D5C}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\showrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
+          "DockedHeight": 284,
           "SelectedChildIndex": 3,
           "Children": [
             {
@@ -64,101 +48,58 @@
               "RelativeDocumentMoniker": "MVC\\appsettings.json",
               "ToolTip": "E:\\InternDeha\\Demo\\MVC\\appsettings.json",
               "RelativeToolTip": "MVC\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-18T03:30:55.486Z",
+              "WhenOpened": "2025-03-18T09:31:26.061Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MovieServiceTest.cs",
-              "DocumentMoniker": "E:\\InternDeha\\Demo\\UnitTest\\MovieServiceTest.cs",
-              "RelativeDocumentMoniker": "UnitTest\\MovieServiceTest.cs",
-              "ToolTip": "E:\\InternDeha\\Demo\\UnitTest\\MovieServiceTest.cs",
-              "RelativeToolTip": "UnitTest\\MovieServiceTest.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAiwJ4AAAA1AAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\InternDeha\\Demo\\MVC\\Program.cs",
+              "RelativeDocumentMoniker": "MVC\\Program.cs",
+              "ToolTip": "E:\\InternDeha\\Demo\\MVC\\Program.cs",
+              "RelativeToolTip": "MVC\\Program.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAADIAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T03:16:15.116Z",
+              "WhenOpened": "2025-03-18T09:31:15.39Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\InternDeha\\Demo\\MVC\\Areas\\Admin\\Views\\AdminShow\\Index.cshtml",
-              "RelativeDocumentMoniker": "MVC\\Areas\\Admin\\Views\\AdminShow\\Index.cshtml",
-              "ToolTip": "E:\\InternDeha\\Demo\\MVC\\Areas\\Admin\\Views\\AdminShow\\Index.cshtml",
-              "RelativeToolTip": "MVC\\Areas\\Admin\\Views\\AdminShow\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAACoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-18T03:14:00.933Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ShowService.cs",
-              "DocumentMoniker": "E:\\InternDeha\\Demo\\Infrastructure\\Services\\ShowService.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Services\\ShowService.cs",
-              "ToolTip": "E:\\InternDeha\\Demo\\Infrastructure\\Services\\ShowService.cs",
-              "RelativeToolTip": "Infrastructure\\Services\\ShowService.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAUwEIAAAAdAAAAAAAAAA==",
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "E:\\InternDeha\\Demo\\MVC\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "MVC\\Controllers\\BookingController.cs",
+              "ToolTip": "E:\\InternDeha\\Demo\\MVC\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "MVC\\Controllers\\BookingController.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAAAKQAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T03:09:27.211Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ShowRepository.cs",
-              "DocumentMoniker": "E:\\InternDeha\\Demo\\Infrastructure\\Repositories\\ShowRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ShowRepository.cs",
-              "ToolTip": "E:\\InternDeha\\Demo\\Infrastructure\\Repositories\\ShowRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\ShowRepository.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAcwEoAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T03:08:33.09Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IShowRepository.cs",
-              "DocumentMoniker": "E:\\InternDeha\\Demo\\Core\\Repositories\\IShowRepository.cs",
-              "RelativeDocumentMoniker": "Core\\Repositories\\IShowRepository.cs",
-              "ToolTip": "E:\\InternDeha\\Demo\\Core\\Repositories\\IShowRepository.cs",
-              "RelativeToolTip": "Core\\Repositories\\IShowRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T03:08:09.077Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IShowService.cs",
-              "DocumentMoniker": "E:\\InternDeha\\Demo\\Application\\Services\\IShowService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\IShowService.cs",
-              "ToolTip": "E:\\InternDeha\\Demo\\Application\\Services\\IShowService.cs",
-              "RelativeToolTip": "Application\\Services\\IShowService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T03:08:03.078Z",
+              "WhenOpened": "2025-03-18T08:43:32.45Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AdminShowController.cs",
-              "DocumentMoniker": "E:\\InternDeha\\Demo\\MVC\\Areas\\Admin\\Controllers\\AdminShowController.cs",
-              "RelativeDocumentMoniker": "MVC\\Areas\\Admin\\Controllers\\AdminShowController.cs",
-              "ToolTip": "E:\\InternDeha\\Demo\\MVC\\Areas\\Admin\\Controllers\\AdminShowController.cs",
-              "RelativeToolTip": "MVC\\Areas\\Admin\\Controllers\\AdminShowController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAApAAAAAAAAAA==",
+              "Title": "MovieServiceTest.cs",
+              "DocumentMoniker": "E:\\InternDeha\\Demo\\UnitTest\\MovieServiceTest.cs",
+              "RelativeDocumentMoniker": "UnitTest\\MovieServiceTest.cs",
+              "ToolTip": "E:\\InternDeha\\Demo\\UnitTest\\MovieServiceTest.cs",
+              "RelativeToolTip": "UnitTest\\MovieServiceTest.cs",
+              "ViewState": "AgIAALIAAAAAAAAAAAAAwLYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T03:07:45.748Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T04:18:00.615Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 116,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }
