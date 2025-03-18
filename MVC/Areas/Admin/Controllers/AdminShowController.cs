@@ -7,6 +7,7 @@ using Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Drawing.Printing;
 
 namespace MVC.Areas.Admin.Controllers
 {
@@ -14,9 +15,13 @@ namespace MVC.Areas.Admin.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminShowController(IShowService showService, IMapper mapper,IMovieService movieService,IShowtimeDetailService showtimeDetail, ICinemaService cinemaService,IRoomService roomService, INotyfService notyfService) : Controller
     {
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1, int pageSize = 10)
         {
-            var shows = await showService.GetAll();
+            //var shows = await showService.GetAll();
+            var (shows, totalCount) = await showService.GetListPagination(page, pageSize);
+            var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
+            ViewBag.TotalPages = totalPages;
+            ViewBag.CurentPage = page;
             return View(shows);
         }
 

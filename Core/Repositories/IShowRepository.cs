@@ -11,6 +11,7 @@ namespace Core.Repositories
 {
     public interface IShowRepository : IRepositoryBase<Show, int>
     {
+        Task<(IEnumerable<Show> Shows, int TotalCount)> GetAllAsync(int page, int pageSize);
         Task<Show> GetByNewCondition(Expression<Func<Show, bool>> condition,
             Func<IQueryable<Show>, IIncludableQueryable<Show, object>> include = null);
 

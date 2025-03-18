@@ -68,6 +68,12 @@ namespace Infrastructure.Services
             }
         }
 
+        public async Task<(IEnumerable<Show> Shows, int TotalCount)> GetListPagination(int page, int pageSize)
+        {
+            var (shows, totalCount) = await showRepository.GetAllAsync(page, pageSize);
+            return (shows, totalCount);
+        }
+
         public async Task<IEnumerable<Show?>> GetShowByShowDayAndMovieId(string day, int movieId)
         {
             var convertDay = DateTime.Parse(day);

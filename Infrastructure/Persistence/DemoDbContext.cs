@@ -32,6 +32,7 @@ namespace Infrastructure.Persistence
         public DbSet<BookingSeat> BookingSeats { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<MovieType> MovieTypes { get; set; }
+        public DbSet<SeatLock> SeatLocks { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

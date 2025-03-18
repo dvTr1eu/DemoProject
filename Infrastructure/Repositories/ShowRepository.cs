@@ -64,6 +64,24 @@ namespace Infrastructure.Repositories
             }
         }
 
+        public async Task<(IEnumerable<Show> Shows, int TotalCount)> GetAllAsync(int page, int pageSize)
+        {
+            var query = dbContext.Shows
+                .Include(s => s.Movie)
+                .Include(s => s.Room)
+                .ThenInclude(s => s.Cinema)
+                .Include(s => s.ShowTimeDetails);
+
+            int totalCount = await query.CountAsync();
+
+            var results = await query
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize) 
+                .ToListAsync();
+
+            return (results, totalCount);
+        }
+
         public async Task<Show> GetByNewCondition(Expression<Func<Show, bool>> condition, Func<IQueryable<Show>, IIncludableQueryable<Show, object>> include = null)
         {
             var dataset = dbContext.Shows.AsQueryable();

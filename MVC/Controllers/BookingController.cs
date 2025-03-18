@@ -62,6 +62,15 @@ namespace MVC.Controllers
         public async Task<IActionResult> CreateBook(int roomId,int showId, TimeOnly showTime, int totalAmount, string selectedSeats)
         {
             var show = await showService.FindById(showId);
+            var userId = userManager.GetUserId(User);
+            var seatList = selectedSeats.Split(',').Select(s => s.Trim()).ToList();
+
+            var isLocked = await seatService.LockSeats(roomId, showId, userId, seatList);
+            if (!isLocked)
+            {
+                TempData["Error"] = "Một số ghế bạn chọn đang được đặt bởi người khác. Vui lòng chọn lại!";
+                return RedirectToAction("CreateBook", new { showId, showTime });
+            }
             var bookingData = new
             {
                 UserId = userManager.GetUserId(User),
@@ -146,6 +155,7 @@ namespace MVC.Controllers
                         };
 
                         await bookingSeatService.Create(bookingSeat);
+                        await seatService.ReleaseLockedSeats(seatList, Convert.ToInt32(bookingData.ShowId));
                     }
                 }
 

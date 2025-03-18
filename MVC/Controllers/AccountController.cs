@@ -25,9 +25,6 @@ namespace MVC.Controllers
         {
 	        var user = await userManager.GetUserAsync(User);
 	        var userDto = mapper.Map<UserDto>(user);
-            var booking = await bookingService.GetBookingByUserId(user.Id);
-            var bookingList = mapper.Map<IEnumerable<BookingDto>>(booking);
-            ViewBag.BookingList = bookingList;
             return View(userDto);
         }
 
@@ -268,6 +265,16 @@ namespace MVC.Controllers
                 }
             }
             return View(model);
+        }
+
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> BookingListHistory()
+        {
+            string userId = userManager.GetUserId(User);
+            var booking = await bookingService.GetBookingByUserId(userId);
+            var bookingList = mapper.Map<IEnumerable<BookingDto>>(booking);
+            return View(bookingList);
         }
 
         [Authorize]

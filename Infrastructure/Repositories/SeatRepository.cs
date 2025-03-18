@@ -76,6 +76,43 @@ namespace Infrastructure.Repositories
                 .FirstOrDefaultAsync(s => s.RoomId == roomId && s.SeatRow == seatRow && s.SeatNumber == seatNumber);
         }
 
+        public async Task<bool> LockSeats(int roomId, int showId, string userId, List<string> seatCodes)
+        {
+            foreach (var seat in seatCodes)
+            {
+                var existingLock = await dbContext.SeatLocks.FirstOrDefaultAsync(s =>
+                    s.SeatCode == seat && s.ShowId == showId && s.IsLocked);
+
+                if (existingLock != null)
+                {
+                    return false;
+                }
+
+                dbContext.SeatLocks.Add(new SeatLock
+                {
+                    SeatCode = seat,
+                    RoomId = roomId,
+                    ShowId = showId,
+                    UserId = userId,
+                    LockTime = DateTime.Now,
+                    IsLocked = true
+                });
+            }
+
+            await dbContext.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task ReleaseLockedSeats(List<string> seatCodes, int showId)
+        {
+            var lockedSeats = await dbContext.SeatLocks
+                .Where(s => seatCodes.Contains(s.SeatCode) && s.ShowId == showId)
+                .ToListAsync();
+
+            dbContext.SeatLocks.RemoveRange(lockedSeats);
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task UpdateAsync(Seat entity, int id)
         {
             var existingEntity = await dbContext.Seats

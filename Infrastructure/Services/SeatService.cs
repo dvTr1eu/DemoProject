@@ -95,6 +95,31 @@ namespace Infrastructure.Services
             }
         }
 
+        public async Task<bool> LockSeats(int roomId, int showId, string userId, List<string> seatCodes)
+        {
+            try
+            {
+                var result = await seatRepository.LockSeats(roomId, showId, userId, seatCodes);
+                return result;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task ReleaseLockedSeats(List<string> seatCodes, int showId)
+        {
+            try
+            {
+                await seatRepository.ReleaseLockedSeats(seatCodes, showId);
+            }
+            catch
+            {
+                throw new Exception();
+            }
+        }
+
         public async Task<bool> Edit(Seat entity, int id)
         {
             try

@@ -91,16 +91,24 @@
 
                                             Sửa
                                         </a>
-                                        @* <a class="text-danger font-weight-bold text-md ps-3 border-start-lg cursor-pointer"
-                                                onclick="if (confirm('Bạn có chắn muốn xóa ?')) { location.href = '@Url.Action("DeleteCinema", new { id = item.Id })'; }">
+                                        <a class="text-danger font-weight-bold text-md ps-3 border-start-lg cursor-pointer"
+                                                onclick="if (confirm('Bạn có chắn muốn xóa ?')) { location.href = '@Url.Action("DeleteShow", new { id = item.Id })'; }">
                                                  Xóa
-                                             </a> *@
+                                             </a>
                                     </td>
                                 </tr>
                             }
                         }
                         </tbody>
                     </table>
+                    <ul class="pagination">
+                        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                                <a class="page-link" href="?page=@i">@i</a>
+                            </li>
+                        }
+                    </ul>
                 </div>
             </div>
         </div>
